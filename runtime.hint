@@ -1,0 +1,8 @@
+category: Archive Libs
+requires: cygwin zlib
+external-source: libzip
+sdesc: "Library for accessing ZIP archives (runtime)"
+ldesc: "This is a C library for reading, creating, and modifying zip
+archives. Files can be added from data buffers, files, or compressed
+data copied directly from other zip archives.  Changes made without
+closing the archive can be reverted."

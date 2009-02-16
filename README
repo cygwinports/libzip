@@ -1,0 +1,114 @@
+libzip
+------------------------------------------
+This is a C library for reading, creating, and modifying zip archives. 
+Files can be added from data buffers, files, or compressed data copied
+directly from other zip archives.  Changes made without closing the
+archive can be reverted.
+
+Runtime requirements:
+  cygwin-1.5.25-15
+  zlib-1.2.3-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf2.5-2.61-1
+  automake1.10-1.10.1-1
+  binutils-20080523-2
+  cygport-0.3.12-1
+  gawk-3.1.6-1
+  gcc-core-3.4.4-3
+  libtool-2.2.2-2
+  make-3.81-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://www.nih.at/libzip/
+
+-------------------------------------------
+
+Build instructions:
+  unpack libzip-0.9-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libzip-0.9-X.cygport all
+
+This will create:
+  /usr/src/libzip-0.9-X-src.tar.bz2
+  /usr/src/libzip-0.9-X.tar.bz2
+  /usr/src/libzip-devel-0.9-X.tar.bz2
+  /usr/src/libzip1-0.9-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(libzip)
+  /usr/bin/zipcmp.exe
+  /usr/bin/zipmerge.exe
+  /usr/share/doc/libzip-0.9/ChangeLog
+  /usr/share/doc/libzip-0.9/INSTALL
+  /usr/share/doc/libzip-0.9/NEWS
+  /usr/share/doc/libzip-0.9/README
+  /usr/share/doc/libzip-0.9/THANKS
+  /usr/share/doc/libzip-0.9/TODO
+  /usr/share/man/man1/zipcmp.1.gz
+  /usr/share/man/man1/zipmerge.1.gz
+
+(libzip1)
+  /usr/bin/cygzip-1.dll
+
+(libzip-devel)
+  /usr/include/zip.h
+  /usr/lib/libzip.a
+  /usr/lib/libzip.dll.a
+  /usr/lib/libzip.la
+  /usr/lib/pkgconfig/libzip.pc
+  /usr/share/man/man3/libzip.3.gz
+  /usr/share/man/man3/zip_add.3.gz
+  /usr/share/man/man3/zip_close.3.gz
+  /usr/share/man/man3/zip_delete.3.gz
+  /usr/share/man/man3/zip_error_get.3.gz
+  /usr/share/man/man3/zip_error_get_sys_type.3.gz
+  /usr/share/man/man3/zip_error_to_str.3.gz
+  /usr/share/man/man3/zip_errors.3.gz
+  /usr/share/man/man3/zip_fclose.3.gz
+  /usr/share/man/man3/zip_file_strerror.3.gz
+  /usr/share/man/man3/zip_fopen.3.gz
+  /usr/share/man/man3/zip_fread.3.gz
+  /usr/share/man/man3/zip_get_archive_comment.3.gz
+  /usr/share/man/man3/zip_get_file_comment.3.gz
+  /usr/share/man/man3/zip_get_name.3.gz
+  /usr/share/man/man3/zip_get_num_files.3.gz
+  /usr/share/man/man3/zip_name_locate.3.gz
+  /usr/share/man/man3/zip_open.3.gz
+  /usr/share/man/man3/zip_rename.3.gz
+  /usr/share/man/man3/zip_set_archive_comment.3.gz
+  /usr/share/man/man3/zip_set_file_comment.3.gz
+  /usr/share/man/man3/zip_source_buffer.3.gz
+  /usr/share/man/man3/zip_source_file.3.gz
+  /usr/share/man/man3/zip_source_filep.3.gz
+  /usr/share/man/man3/zip_source_free.3.gz
+  /usr/share/man/man3/zip_source_function.3.gz
+  /usr/share/man/man3/zip_source_zip.3.gz
+  /usr/share/man/man3/zip_stat.3.gz
+  /usr/share/man/man3/zip_unchange.3.gz
+  /usr/share/man/man3/zip_unchange_all.3.gz
+  /usr/share/man/man3/zip_unchange_archive.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.9-1 -----
+Version bump.
+
+----- version 0.8-1 -----
+Version bump.
+
+----- version 0.7.1-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/
