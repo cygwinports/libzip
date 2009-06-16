@@ -1,5 +1,5 @@
 category: Archive
-requires: cygwin libzip1
+requires: cygwin libgcc1 libzip1
 sdesc: "Library for accessing ZIP archives (utilities, documentation)"
 ldesc: "This is a C library for reading, creating, and modifying zip
 archives. Files can be added from data buffers, files, or compressed

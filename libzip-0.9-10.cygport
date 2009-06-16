@@ -1,0 +1,9 @@
+DESCRIPTION="Library for accessing ZIP archives"
+HOMEPAGE="http://www.nih.at/libzip/"
+SRC_URI="http://www.nih.at/libzip/${P}.tar.gz"
+
+PKG_NAMES="${PN} ${PN}1 ${PN}-devel"
+PKG_HINTS='setup runtime devel'
+libzip_CONTENTS='usr/bin/*.exe usr/share/doc/ usr/share/man/man1/'
+libzip1_CONTENTS="usr/bin/*-1.dll"
+libzip_devel_CONTENTS='usr/include/ usr/lib/ usr/share/man/man3/'

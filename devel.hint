@@ -1,5 +1,5 @@
-category: Archive Libs
-requires: cygwin libzip1 zlib
+category: Archive
+requires: cygwin libzip1 zlib-devel
 external-source: libzip
 sdesc: "Library for accessing ZIP archives (development)"
 ldesc: "This is a C library for reading, creating, and modifying zip
