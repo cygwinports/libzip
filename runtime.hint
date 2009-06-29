@@ -1,5 +1,5 @@
 category: Archive
-requires: cygwin libgcc1 zlib0
+requires: libgcc1 zlib0
 external-source: libzip
 sdesc: "Library for accessing ZIP archives (runtime)"
 ldesc: "This is a C library for reading, creating, and modifying zip
