@@ -1,0 +1,18 @@
+NAME="libzip"
+VERSION=0.11
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Library for accessing ZIP archives"
+DESCRIPTION="This is a C library for reading, creating, and modifying zip
+archives. Files can be added from data buffers, files, or compressed data
+copied directly from other zip archives.  Changes made without closing the
+archive can be reverted."
+HOMEPAGE="http://www.nih.at/libzip/"
+SRC_URI="http://www.nih.at/libzip/${NAME}-${VERSION}.tar.xz"
+
+PKG_NAMES="${NAME} ${NAME}2 ${NAME}-devel"
+libzip_CONTENTS='usr/bin/*.exe usr/share/doc/ usr/share/man/man1/'
+libzip2_CONTENTS="usr/bin/cygzip-2.dll"
+libzip_devel_CONTENTS='usr/include/ usr/lib/ usr/share/man/man3/'
+
+KEEP_LA_FILES="none"
