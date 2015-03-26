@@ -1,6 +1,6 @@
 NAME="libzip"
 VERSION=0.11.2
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Library for accessing ZIP archives"
 DESCRIPTION="This is a C library for reading, creating, and modifying zip
@@ -9,6 +9,7 @@ copied directly from other zip archives.  Changes made without closing the
 archive can be reverted."
 HOMEPAGE="http://www.nih.at/libzip/"
 SRC_URI="http://www.nih.at/libzip/${NAME}-${VERSION}.tar.xz"
+PATCH_URI="http://pkgs.fedoraproject.org/cgit/libzip.git/plain/libzip-0.11.2-CVE-2015-2331.patch"
 
 PKG_NAMES="${NAME} ${NAME}2 ${NAME}-devel ${NAME}-doc"
 libzip_CONTENTS='usr/bin/*.exe usr/share/doc/ usr/share/man/man1/'
