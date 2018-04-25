@@ -1,30 +1,33 @@
+inherit cmake
+
 NAME="libzip"
-VERSION=0.11.2
-RELEASE=2
+VERSION=1.5.1
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Library for accessing ZIP archives"
 DESCRIPTION="This is a C library for reading, creating, and modifying zip
 archives. Files can be added from data buffers, files, or compressed data
 copied directly from other zip archives.  Changes made without closing the
 archive can be reverted."
-HOMEPAGE="http://www.nih.at/libzip/"
-SRC_URI="http://www.nih.at/libzip/${NAME}-${VERSION}.tar.xz"
-PATCH_URI="http://pkgs.fedoraproject.org/cgit/libzip.git/plain/libzip-0.11.2-CVE-2015-2331.patch"
+HOMEPAGE="https://libzip.org/"
+SRC_URI="https://libzip.org/download/libzip-${VERSION}.tar.xz"
 
-PKG_NAMES="${NAME} ${NAME}2 ${NAME}-devel ${NAME}-doc"
-libzip_CONTENTS='usr/bin/*.exe usr/share/doc/ usr/share/man/man1/'
-libzip2_CONTENTS="usr/bin/cygzip-2.dll"
-libzip_devel_CONTENTS='usr/include/ usr/lib/'
+PKG_NAMES="${NAME}5 ${NAME}-devel ${NAME}-doc ${NAME}-tools"
+libzip5_CONTENTS="usr/bin/cygzip-5.dll"
+libzip_devel_CONTENTS="
+	usr/include/zip*.h
+	usr/lib/libzip.dll.a
+	usr/lib/pkgconfig/libzip.pc
+"
 libzip_doc_CATEGORY="Doc"
 libzip_doc_SUMMARY="API documentation for libzip"
 libzip_doc_CONTENTS="usr/share/man/man3/"
+libzip_tools_CATEGORY="Archive"
+libzip_tools_OBSOLETES=${NAME}
+libzip_tools_CONTENTS='usr/bin/*.exe usr/share/doc/ usr/share/man/man1/'
 
-src_install() {
+src_test() {
 	cd ${B}
-	cyginstall
-
-	# not all libzip consumers are using pkg-config for libzip yet
-	dosym ../lib/libzip/include/zipconf.h /usr/include/zipconf.h
+	PATH=${B}/lib:$PATH \
+	ctest
 }
-
-KEEP_LA_FILES="none"
